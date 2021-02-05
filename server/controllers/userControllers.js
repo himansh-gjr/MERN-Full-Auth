@@ -28,6 +28,7 @@ exports.registerController = async (req, res) => {
   await user.save();
   res
     .header("x-auth-token", token)
+    .header("access-control-expose-headers", "x-auth-token")
     .send(_.pick(user, ["name", "email", "role"]));
 };
 
@@ -81,7 +82,10 @@ exports.loginController = async (req, res) => {
   if (!comparePassword) return res.status(400).send("invalid password");
 
   const token = genToken(user);
-  res.header("x-auth-token", token).send(_.pick(user, ["name", "email"]));
+  res
+    .header("x-auth-token", token)
+    .header("access-control-expose-headers", "x-auth-token")
+    .send(token);
 };
 
 exports.logoutController = (req, res) => {
