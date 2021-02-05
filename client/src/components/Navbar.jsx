@@ -54,6 +54,11 @@ const Navbar = ({ user }) => {
                   {user.name}
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/profile/update">
+                  Update Profile
+                </NavLink>
+              </li>
             </React.Fragment>
           )}
         </ul>

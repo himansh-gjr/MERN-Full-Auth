@@ -52,7 +52,7 @@ exports.profileUpdateController = async (req, res) => {
   const { error } = validateUpdateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const { name, password } = req.body;
+  const { name, password, email } = req.body;
   const user = await User.findOne({ _id: req.user._id }); // will return a data of current user
 
   if (!user) return res.status(400).send("User not Found");
@@ -60,10 +60,10 @@ exports.profileUpdateController = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
 
-  user.set({ name: name, password: hashedPassword });
+  user.set({ name: name, password: hashedPassword, email: email });
   user.save(); // new data of user
 
-  res.json(_.pick(user, ["name"]));
+  res.send("User Updated");
 };
 
 exports.loginController = async (req, res) => {
