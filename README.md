@@ -1,6 +1,5 @@
 # MERN-Full-Auth
 
-# Full-stack auth 
 
 This is a full-stack app that anyone can refer to when building projects.
 
