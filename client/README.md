@@ -1,6 +1,6 @@
 ## Frondend of MERN-Full auth
 
-This if frontend implementation for this project using REACT js.
+This is frontend implementation for this project using REACT js.
 
 
 To setup the frontend run `npm i` (to install all dependencies)
