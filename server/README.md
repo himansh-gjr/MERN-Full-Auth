@@ -1,6 +1,6 @@
 ## Backend of MERN-Full auth
 
-This if frontend implementation for this project using Node js (Express js).
+This is backend implementation for this project using Node js (Express js).
 
 To setup the backend run `npm i` (to install all dependencies)
 
